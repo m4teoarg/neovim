@@ -138,16 +138,16 @@ require("lazy").setup({
 			local lspconfig = require("lspconfig")
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
 			capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
-			local on_attach = function(client, bufnr)
+			local on_attach = function(_, bufnr)
 				local function buf_set_keymap(...)
 					vim.api.nvim_buf_set_keymap(bufnr, ...)
 				end
 				local opts = { noremap = true, silent = true }
 				buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
 				buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-				require("cmp").on_attach(client, bufnr)
+				-- require("cmp").on_attach(_, bufnr)
 			end
-			local servers = { "pyright", "html", "cssls" }
+			local servers = { "lua_ls", "pyright", "html", "cssls" }
 			for _, lsp in ipairs(servers) do
 				lspconfig[lsp].setup({
 					capabilities = capabilities,
