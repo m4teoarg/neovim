@@ -36,6 +36,7 @@
   "render-markdown.nvim": { "branch": "main", "commit": "fc05fb7c56795f191b6800799a2ec6ea325ba715" },
   "supermaven-nvim": { "branch": "main", "commit": "07d20fce48a5629686aefb0a7cd4b25e33947d50" },
   "telescope.nvim": { "branch": "master", "commit": "85922dde3767e01d42a08e750a773effbffaea3e" },
+  "vim-tmux-navigator": { "branch": "master", "commit": "a9b52e7d36114d40350099f254b5f299a35df978" },
   "volt": { "branch": "main", "commit": "4472da2e77ad240e7fc56af6357b2a8fdf6aa0ae" },
   "which-key.nvim": { "branch": "main", "commit": "8badb359f7ab8711e2575ef75dfe6fbbd87e4821" }
 }

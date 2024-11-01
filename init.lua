@@ -775,10 +775,23 @@ require("lazy").setup({
 			vim.keymap.set("n", "<Leader>dc", dap.continue, {})
 			vim.keymap.set("n", "<Leader>dr", ":lua require('dapui').open({reset = true})<CR>", {})
 
+			vim.cmd("hi DapBreakpointColor guifg=#ff5500")
+			vim.cmd("hi DapStoppedColor guifg=#417b15")
+
 			vim.fn.sign_define(
 				"DapBreakpoint",
-				{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+				{ text = "", texthl = "DapBreakpointColor", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
 			)
+
+			vim.fn.sign_define(
+				"DapStopped",
+				{ text = "", texthl = "DapStoppedColor", linehl = "DapStopped", numhl = "DapStopped" }
+			)
+
+			-- vim.fn.sign_define(
+			-- 	"DapBreakpoint",
+			-- 	{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+			-- )
 		end,
 	},
 	{
@@ -814,5 +827,22 @@ require("lazy").setup({
 			local path = "~/.local/share/nvim/mason/packages/debugpy/venv/bin/python3"
 			require("dap-python").setup(path)
 		end,
+	},
+	{
+		"christoomey/vim-tmux-navigator",
+		cmd = {
+			"TmuxNavigateLeft",
+			"TmuxNavigateDown",
+			"TmuxNavigateUp",
+			"TmuxNavigateRight",
+			"TmuxNavigatePrevious",
+		},
+		keys = {
+			{ "<c-h>", "<cmd><C-U>TmuxNavigateLeft<cr>" },
+			{ "<c-j>", "<cmd><C-U>TmuxNavigateDown<cr>" },
+			{ "<c-k>", "<cmd><C-U>TmuxNavigateUp<cr>" },
+			{ "<c-l>", "<cmd><C-U>TmuxNavigateRight<cr>" },
+			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
+		},
 	},
 })
