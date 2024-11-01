@@ -608,25 +608,25 @@ require("lazy").setup({
 	},
 	--#endregion
 	--#region folke/noice.nvim
-	{
-		"folke/noice.nvim",
-		event = "VeryLazy",
-		opts = {
-			routes = {
-				{
-					filter = { event = "notify", find = "No information available" },
-					opts = { skip = true },
-				},
-			},
-			presets = {
-				lsp_doc_border = true,
-			},
-		},
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-			"rcarriga/nvim-notify",
-		},
-	},
+	-- {
+	-- 	"folke/noice.nvim",
+	-- 	event = "VeryLazy",
+	-- 	opts = {
+	-- 		routes = {
+	-- 			{
+	-- 				filter = { event = "notify", find = "No information available" },
+	-- 				opts = { skip = true },
+	-- 			},
+	-- 		},
+	-- 		presets = {
+	-- 			lsp_doc_border = true,
+	-- 		},
+	-- 	},
+	-- 	dependencies = {
+	-- 		"MunifTanjim/nui.nvim",
+	-- 		"rcarriga/nvim-notify",
+	-- 	},
+	-- },
 	--#endregion
 	--#region NvChad/volt
 	{
@@ -777,7 +777,7 @@ require("lazy").setup({
 
 			vim.fn.sign_define(
 				"DapBreakpoint",
-				{ text = "⏺", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
+				{ text = "", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" }
 			)
 		end,
 	},
@@ -786,8 +786,8 @@ require("lazy").setup({
 		ft = "python",
 		dependencies = {
 			"mfussenegger/nvim-dap",
-			"rcarriga/nvim-dap-ui",
-			"nvim-neotest/nvim-nio",
+			-- "rcarriga/nvim-dap-ui",
+			-- "nvim-neotest/nvim-nio",
 		},
 		config = function()
 			local dap, dapui = require("dap"), require("dapui")
