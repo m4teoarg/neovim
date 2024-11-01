@@ -845,4 +845,16 @@ require("lazy").setup({
 			{ "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
 		},
 	},
+	{
+		"dense-analysis/ale",
+		config = function()
+			-- Habilitar linter para HTML
+			vim.g.ale_linters = {
+				html = { "htmlhint" },
+			}
+			-- Configuraciones adicionales
+			vim.g.ale_lint_on_text_changed = "always"
+			vim.g.ale_lint_on_insert_leave = 1
+		end,
+	},
 })
